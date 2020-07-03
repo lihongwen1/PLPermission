@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'  //添加这句！！！
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -18,5 +18,18 @@ android {
 
 dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+    compileOnly 'androidx.appcompat:appcompat:1.0.0'
+}
+
+publish {//添加这个！！！！
+    userOrg = 'yiyeshu'//bintray.com用户名
+    repoName = "maven" //仓库名
+    groupId = 'com.pili.yiyeshu'//jcenter上的路径
+    artifactId = 'plpermission'//包名
+    publishVersion = '1.0.1'//版本号
+    desc = 'This is my first Bintray project!'// 描述
+    website = 'https://github.com/lihongwen1/PLPermission.git'//一般填github 项目地址,一定是要有效的地址
+
+    //配置完成后再terminal命令行处执行以下命令即可
+    //gradlew clean build bintrayUpload -PbintrayUser=yiyeshu -PbintrayKey=8c6056f8009cd3c821718afb5364ef96b59f2ee8 -PdryRun=false
 }

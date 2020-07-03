@@ -1,5 +1,6 @@
 package com.pili.plpermission;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -144,6 +145,7 @@ public class PermissionUtil {
      * @param permission 权限
      * @return 该权限是否有效
      */
+    @SuppressLint("WrongConstant")
     public static boolean checkSelfPermission(@NonNull Context context, @NonNull String permission) {
         return PermissionChecker.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED;
     }

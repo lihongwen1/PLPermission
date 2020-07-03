@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 国产手机的一些黑名单，持续更新
+ * �����ֻ���һЩ����������������
  */
 public class Blacklist {
     /**
-     * 用于临时设置黑名单，外部调用
+     * ������ʱ���ú��������ⲿ����
      */
     public static List<String[]> mobiles = new ArrayList<>();
     public static boolean forceCheck = false;
